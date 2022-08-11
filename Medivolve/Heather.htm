@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Medivolve</title>
+<link rel="stylesheet" href="Medivolve_files/bootstrap.min_002.css">
+<link rel="stylesheet" href="Medivolve_files/css.css">
+<link rel="stylesheet" href="Medivolve_files/fontawesome-all.min.css">
+<link rel="stylesheet" href="Medivolve_files/font-awesome.min.css">
+<link rel="stylesheet" href="Medivolve_files/fontawesome5-overrides.min.css">
+<link rel="stylesheet" href="Medivolve_files/bootstrap.min.css">
+<link rel="stylesheet" href="Medivolve_files/table.links.css">
+<link rel="stylesheet" href="Medivolve_files/untitled.css">
+</head>
+<body id="page-top">
+<div id="wrapper">
+<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+<div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="https://medivolve.org/patients/dashboard.php">
+<div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-flask"></i></div>
+<div class="sidebar-brand-text mx-3"><span>Medivolve </span></div>
+</a>
+<hr class="sidebar-divider my-0">
+<ul class="navbar-nav text-light" id="accordionSidebar">
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/patients/dashboard.php"><i class="fa fa-heartbeat"></i><span>Dashboard</span></a></li>
+
+
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/patients/reports.php?uuid=ebb8414dc7b3b112e1d39f19a1c5fc564e03"><i class="fas fa-file-medical"></i><span>Reports</span></a></li>
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/patients/profile_patients.php?uuid=ebb8414dc7b3b112e1d39f19a1c5fc564e03"><i class="fas fa-user"></i><span>My Profile</span></a></li>
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/patients/insurance.php?uuid=ebb8414dc7b3b112e1d39f19a1c5fc564e03"><i class="fas fa-money-check-alt"></i><span>Insurance</span></a></li>
+
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/patients/family_members.php"><i class="fa fa-users"></i><span>Family Members</span></a></li>
+
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/patients/help_center_patients.php"><i class="fa fa-question"></i><span>Help Center</span></a></li>
+<li class="nav-item"><a class="nav-link" href="https://medivolve.org/logout.php"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+</ul>
+<div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+</div>
+</nav>
+<div class="d-flex flex-column" id="content-wrapper">
+<div id="content">
+<nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+<div class="container-fluid"><button class="btn btn-link active d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+<ul class="navbar-nav flex-nowrap ml-auto">
+<div class="d-none d-sm-block topbar-divider"></div>
+<li class="nav-item dropdown no-arrow">
+<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600">Jason Willis</span>
+<img class="border rounded-circle img-profile" src="Medivolve_files/avatar.webp"></a>
+<div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+<a class="dropdown-item" href="https://medivolve.org/patients/profile_picture.php"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Edit Photo</a>
+<a class="dropdown-item" href="https://medivolve.org/patients/profile_patients_email.php"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Change Email</a>
+<a class="dropdown-item" href="https://medivolve.org/patients/profile_patients_password.php"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Reset Password</a>
+<a class="dropdown-item" href="https://medivolve.org/patients/help_center_patients.php"><i class="fa fa-question fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Help Center</a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="https://medivolve.org/logout.php"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+
+
+<div class="container-fluid">
+<div class="d-sm-flex justify-content-between align-items-center mb-4">
+<h3 class="text-dark mb-0">Reports</h3>
+</div>
+<div class="row">
+<div class="ext-dark col">
+<p>View individual patient reports listed below by clicking on each report.</p>
+</div>
+</div>
+<div class="row">
+<div class="card shadow">
+<div class="card-header py-3">
+<p class="text-primary m-0 font-weight-bold">Patient Info</p>
+</div>
+<div class="card-body">
+<div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+<table class="table my-0" id="dataTable">
+<thead>
+<tr class="no_hover">
+<th>Patients</th>
+<th>Collection Date</th>
+<th>Progress</th>
+<th>Dx Test</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody id="table-body">
+<tr style="z-index:1;" class="table-row">
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=338c3614111415d3cf86e668e454f4257585'">Guimond, Heather</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=338c3614111415d3cf86e668e454f4257585'">2022-08-11</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=338c3614111415d3cf86e668e454f4257585'">
+<h4 class="small font-weight-bold">Completed <span class="float-right">100%</span></h4>
+<div class="progress progress-sm mb-3">
+<div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span></div>
+</div>
+</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=338c3614111415d3cf86e668e454f4257585'">SARS-CoV-2 Antigen Test</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=338c3614111415d3cf86e668e454f4257585'">Antigen: NEGATIVE</td>
+</tr>
+<tr style="z-index:1;" class="table-row">
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=ad4c3ddc64b41f78049cc1607d06a878954e'">Guimond, Heather</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=ad4c3ddc64b41f78049cc1607d06a878954e'">2022-08-11</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=ad4c3ddc64b41f78049cc1607d06a878954e'">
+<h4 class="small font-weight-bold">Completed <span class="float-right">100%</span></h4>
+<div class="progress progress-sm mb-3">
+<div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span></div>
+</div>
+</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=ad4c3ddc64b41f78049cc1607d06a878954e'">SARS-CoV-2 lgG/IgM Rapid Test</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = 'report_view.php?id=&amp;uuid=ad4c3ddc64b41f78049cc1607d06a878954e'">IgM: POSITIVE<br>
+IgG: NEGATIVE</td>
+</tr>
+<tr style="z-index:1;" class="table-row">
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '#?id=&amp;uuid=67d1f9f0ce087a8fce993d40fbd070922859'">Guimond, Heather</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '#?id=&amp;uuid=67d1f9f0ce087a8fce993d40fbd070922859'">2022-08-11</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '#?id=&amp;uuid=67d1f9f0ce087a8fce993d40fbd070922859'">
+ <h4 class="small font-weight-bold">Sample collected <span class="float-right">25%</span></h4>
+<div class="progress progress-sm mb-3">
+<div class="progress-bar bg-primary" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"><span class="sr-only">100%</span></div>
+</div>
+</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '#?id=&amp;uuid=67d1f9f0ce087a8fce993d40fbd070922859'">SARS-CoV-2 rtPCR Detection</td>
+<td onclick="if (!window.__cfRLUnblockHandlers) return false; window.location = '#?id=&amp;uuid=67d1f9f0ce087a8fce993d40fbd070922859'">Pending</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="no_hover">
+<th>Patients</th>
+<th>Collection Date</th>
+<th>Progress</th>
+<th>Dx Test</th>
+<th>Result</th>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="row">
+
+<div class="col-md-6">
+<div class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+<div style="text-align:center;margin:20px 0px;"></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+</div>
+<footer class="bg-white sticky-footer">
+<div class="container my-auto">
+<div class="text-center my-auto copyright"><span>Copyright © Medivolve 2021</span></div>
+</div>
+</footer>
+</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+</div>
+<script src="Medivolve_files/jquery.min.js" type="text/javascript"></script>
+<script src="Medivolve_files/bootstrap.min.js" type="text/javascript"></script>
+<script src="Medivolve_files/chart.min.js" type="text/javascript"></script>
+<script src="Medivolve_files/bs-init.js" type="text/javascript"></script>
+<script src="Medivolve_files/jquery.easing.js" type="text/javascript"></script>
+<script src="Medivolve_files/theme.js" type="text/javascript"></script>
+<script src="Medivolve_files/functions.js" type="text/javascript"></script>
+<script src="Medivolve_files/sorttable.js" type="text/javascript"></script>
+
+</body></html>
